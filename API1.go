@@ -10,11 +10,11 @@ func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method != http.MethodGet {
 			w.WriteHeader(http.StatusMethodNotAllowed)
-			fmt.Fprintf(w, "method not allowed")
+			fmt.Fprintf(w, "method forbidden")
 			return
 		}
 
-		fmt.Fprintf(w, "hello world %s", "visitor")
+		fmt.Fprintf(w, "hello world")
 	})
 
 	srv := http.Server{
